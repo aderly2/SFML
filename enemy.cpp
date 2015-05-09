@@ -1,14 +1,14 @@
 //
-//  player.cpp
+//  enemy.cpp
 //  
 //
 //  Created by Munger Rufus on 2015-05-09.
 //
 //
 
-#include "player.h"
+#include "enemy.h"
 
-class player()
+class enemy()
 {
 private:
     sf::Sprite sprite;
@@ -26,7 +26,7 @@ private:
     walkingAnimationLengthCounter = 0;
     
 public:
-    player() // Default Constructor
+    enemy() // Default Constructor
     {
         // Rect
         rect.setPosition(100, 100);
@@ -55,7 +55,7 @@ public:
         spritePlayer.setPosition(rect.getPosition());
         spritePlayer.setRotation(rect.getRotation());
     }
-
+    
     void attack()
     {
         
@@ -64,10 +64,5 @@ public:
     void usePotion()
     {
         hp = hp + 10;
-    }
-    
-    void changeEquipment()
-    {
-        
     }
 };

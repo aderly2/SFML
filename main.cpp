@@ -8,6 +8,7 @@
 #include <iostream>
 using namespace std;
 #include "player.h"
+#include "enemy.h"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~ RANDOM FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 int generateRandom(int max)
