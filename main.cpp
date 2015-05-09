@@ -8,10 +8,42 @@
 #include <iostream>
 using namespace std;
 
+class player()
+{
+private:
+    sf::Sprite sprite;
+    sf::RectangleShape rect;
+    int hp = 10;
+    int str = 5;
+    int vit = 5;
+    int dex = 5;
+    
+public:
+    player() // Constructor
+    {
+        
+    }
+    
+    void move()
+    {
+        
+    }
+    
+    void attack()
+    {
+        
+    }
+    
+    void usePotion()
+    {
+        
+    }
+}
+
 int main(int, char const**)
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Rogue-Like RPG 1.00");
 
     // Set the Icon
     sf::Image icon;
@@ -64,6 +96,26 @@ int main(int, char const**)
 
         // Clear screen
         window.clear();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         // Draw the sprite
         window.draw(sprite);
