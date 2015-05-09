@@ -37,7 +37,6 @@ public:
         // Sprite
         sprite.setOrigin(100,100);
         sprite.setPosition(100, 100);
-        sprite.setPosition(100,100);
     }
     
     void displayStats()

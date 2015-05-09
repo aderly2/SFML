@@ -9,6 +9,7 @@
 using namespace std;
 #include "player.h"
 #include "enemy.h"
+#include "object.h"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~ RANDOM FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 int generateRandom(int max)
@@ -24,8 +25,15 @@ int main(int, char const**)
     // Player Object
     player player;
     
+    // Enemy Vector Array (Stores Enemy Objects)
+    class enemy enemyArray;
+    vector<enemy>::const_iterator iter;
+    std::vector<enemy> theEnemyArray;
     
-    
+    // Object Vector Array (Stores Objects On The Ground)
+    class object objectArray(0);
+    vector<object>::const_iterator iter2;
+    std::vector<object> theObjectArray;
     
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Rogue-Like RPG 1.00");
