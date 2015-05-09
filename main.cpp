@@ -22,6 +22,11 @@ int generateRandom(int max)
 
 int main(int, char const**)
 {
+    // Variables
+    int counter = 0;
+    int counter2 = 0;
+    int counter3 = 0;
+    
     // Load a sprite to display
     sf::Texture texture;
     if (!texture.loadFromFile("resources/cute_image.jpg")) {
@@ -198,7 +203,7 @@ int main(int, char const**)
         counter = 0;
         for (iter2 = theObjectArray.begin(); iter2 != theObjectArray.end(); iter2++)
         {
-            theObjectArray[counter].update(); // Update Items
+            theObjectArray[counter].update();
             //window.draw(theObjectArray[counter].rect);
             window.draw(theObjectArray[counter].sprite);
 
@@ -209,9 +214,10 @@ int main(int, char const**)
         counter = 0;
         for (iter = theEnemyArray.begin(); iter != theEnemyArray.end(); iter++)
         {
+            theEnemyArray[counter].update();
             //window.draw(theEnemyArray[counter].rect);
             window.draw(theEnemyArray[counter].sprite);
-            //window.draw(theEnemyArray[counter].text);
+            
             counter++;
         }
         
