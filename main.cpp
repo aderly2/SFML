@@ -16,6 +16,8 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <iostream>
+using namespace std;
 
 int main(int, char const**)
 {
