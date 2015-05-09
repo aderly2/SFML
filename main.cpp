@@ -8,37 +8,7 @@
 #include <iostream>
 using namespace std;
 
-class player()
-{
-private:
-    sf::Sprite sprite;
-    sf::RectangleShape rect;
-    int hp = 10;
-    int str = 5;
-    int vit = 5;
-    int dex = 5;
-    
-public:
-    player() // Constructor
-    {
-        
-    }
-    
-    void move()
-    {
-        
-    }
-    
-    void attack()
-    {
-        
-    }
-    
-    void usePotion()
-    {
-        
-    }
-}
+
 
 int main(int, char const**)
 {
