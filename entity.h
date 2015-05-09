@@ -1,6 +1,6 @@
 //
 //  entity.h
-//  
+//
 //
 //  Created by Munger Rufus on 2015-05-09.
 //
@@ -14,12 +14,12 @@
 
 class entity
 {
-private:
+protected:
     sf::Sprite sprite;
     sf::RectangleShape rect;
-    
+
 public:
-    enemy(); // Default Constructor
+    entity();
     void update(); // Keep sprite and rect together
 };
 

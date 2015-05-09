@@ -10,12 +10,13 @@
 #define ____enemy__
 
 #include <SFML/Graphics.hpp>
+
 #include <iostream>
 
-class enemy::creature
-{
-private:
+#include "creature.h"
 
+class enemy : public creature
+{
 public:
     enemy(); // Default Constructor
     void aiMovement();
