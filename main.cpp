@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <iostream>
 using namespace std;
+
 #include "player.h"
 #include "enemy.h"
 #include "object.h"
@@ -27,53 +28,53 @@ int main(int, char const**)
     if (!texture.loadFromFile("resources/cute_image.jpg")) {
         return EXIT_FAILURE;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Player Object
     player player;
     player.sprite.setTexture(texture);
-    
+
     // Enemy Vector Array (Stores Enemy Objects)
     class enemy enemyArray;
     vector<enemy>::const_iterator iter;
     std::vector<enemy> theEnemyArray;
-    
+
     // Enemy Object
     enemy enemy;
     enemy.sprite.setTexture(texture);
-    
+
     // Object Vector Array (Stores Objects On The Ground)
     class object objectArray(0);
     vector<object>::const_iterator iter2;
     std::vector<object> theObjectArray;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Rogue-Like RPG 1.00");
 
@@ -112,7 +113,7 @@ int main(int, char const**)
 
         // Clear screen
         window.clear();
-        
+
         // Player Movement ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             // Player Vector Movement
             float tempXSize = window.getSize().x;
@@ -128,7 +129,7 @@ int main(int, char const**)
             dify = dify * -1;
             float angle = atan2(difx,dify) * (180/3.1415);
             player.rect.setRotation(angle);
-            
+
             if (playerCanMove == true)
             {
                 // PLAYER MOVEMENT (WASD)
@@ -158,42 +159,42 @@ int main(int, char const**)
                     player.walkingAnimationLengthCounter = 0;
                 }
             }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // DRAW ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        
-        
+
+
         // Draw Objects
         counter = 0;
         for (iter2 = theObjectArray.begin(); iter2 != theObjectArray.end(); iter2++)
@@ -204,7 +205,7 @@ int main(int, char const**)
 
             counter++;
         }
-        
+
         // Draw Enemies
         counter = 0;
         for (iter = theEnemyArray.begin(); iter != theEnemyArray.end(); iter++)
@@ -214,10 +215,10 @@ int main(int, char const**)
             //window.draw(theEnemyArray[counter].text);
             counter++;
         }
-        
+
         // Draw Player
         window.draw(player);
-        
+
         // Update the window
         window.display();
     }
