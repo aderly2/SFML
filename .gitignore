@@ -1,3 +1,5 @@
 Roguelike.cbp
 *~
 Game.xcodeproj
+bin
+obj
