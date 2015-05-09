@@ -7,11 +7,16 @@
 #include <unistd.h>
 #include <iostream>
 using namespace std;
-
-
+#include "player.h"
 
 int main(int, char const**)
 {
+    // Player Object
+    player player;
+    
+    
+    
+    
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Rogue-Like RPG 1.00");
 
@@ -68,7 +73,50 @@ int main(int, char const**)
         window.clear();
         
         
+        // Player Vector Movement
+        float tempXSize = window.getSize().x;
+        float tempYSize = window.getSize().y;
+        sf::Vector2i localPosition = sf::Mouse::getPosition(window);
+        sf::Vector2f worldPos = window.mapPixelToCoords(localPosition);
+        float mx = (worldPos.x)/tempXSize;
+        float my = (worldPos.y)/tempYSize;
+        float x = (player.rect.getPosition().x)/tempXSize;
+        float y = (player.rect.getPosition().y)/tempYSize;
+        float difx = mx - x;
+        float dify = my - y;
+        dify = dify * -1;
+        float angle = atan2(difx,dify) * (180/3.1415);
+        player.rect.setRotation(angle);
         
+        if (playerCanMove == true)
+        {
+            // PLAYER MOVEMENT (WASD)
+            float tmovementSpeed = player.movementSpeed;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+            {
+                player.rect.move(0,-tmovementSpeed);
+                player.playerAnimationState = 1; // Move Up
+                player.walkingAnimationLengthCounter = 0;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+            {
+                player.rect.move(-tmovementSpeed,0);
+                player.playerAnimationState = 1; // Move Left
+                player.walkingAnimationLengthCounter = 0;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+            {
+                player.rect.move(0,tmovementSpeed);
+                player.playerAnimationState = 1; // Move Down
+                player.walkingAnimationLengthCounter = 0;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+            {
+                player.rect.move(tmovementSpeed,0);
+                player.playerAnimationState = 1; // Move Right
+                player.walkingAnimationLengthCounter = 0;
+            }
+        }
         
         
         

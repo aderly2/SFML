@@ -19,7 +19,7 @@ private:
     int dex = 5;
     
 public:
-    player() // Constructor
+    player() // Default Constructor
     {
         
     }
@@ -28,6 +28,8 @@ public:
     {
         cout << "hp: " << hp << endl;
         cout << "str: " << str << endl;
+        cout << "vit: " << vit << endl;
+        cout << "dex: " << dex << endl;
     }
     
     void move()
