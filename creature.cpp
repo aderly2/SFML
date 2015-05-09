@@ -34,3 +34,11 @@ void creature::attack()
 {
     
 }
+
+void creature::setStats(int hp,int str,int vit,int dex)
+{
+    this->hp = hp;
+    this->str = str;
+    this->vit = vit;
+    this->dex = dex;
+}
