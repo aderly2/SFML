@@ -9,6 +9,15 @@
 using namespace std;
 #include "player.h"
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~ RANDOM FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+int generateRandom(int max)
+{
+    int randomNumber = rand();
+    float random = (randomNumber % max) + 1;
+    int myRandom = random;
+    return myRandom;
+}
+
 int main(int, char const**)
 {
     // Player Object
@@ -49,7 +58,7 @@ int main(int, char const**)
     }
 
     // Play the music
-    music.play();
+    //music.play();
 
     // Start the game loop
     while (window.isOpen())
@@ -91,28 +100,28 @@ int main(int, char const**)
         if (playerCanMove == true)
         {
             // PLAYER MOVEMENT (WASD)
-            float tmovementSpeed = player.movementSpeed;
+            float movementSpeed = player.movementSpeed;
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
             {
-                player.rect.move(0,-tmovementSpeed);
+                player.rect.move(0,-movementSpeed);
                 player.playerAnimationState = 1; // Move Up
                 player.walkingAnimationLengthCounter = 0;
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
             {
-                player.rect.move(-tmovementSpeed,0);
+                player.rect.move(-movementSpeed,0);
                 player.playerAnimationState = 1; // Move Left
                 player.walkingAnimationLengthCounter = 0;
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
             {
-                player.rect.move(0,tmovementSpeed);
+                player.rect.move(0,movementSpeed);
                 player.playerAnimationState = 1; // Move Down
                 player.walkingAnimationLengthCounter = 0;
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
             {
-                player.rect.move(tmovementSpeed,0);
+                player.rect.move(movementSpeed,0);
                 player.playerAnimationState = 1; // Move Right
                 player.walkingAnimationLengthCounter = 0;
             }
@@ -133,14 +142,9 @@ int main(int, char const**)
         
         
         
+        // Draw Player
+        window.draw(player);
         
-
-        // Draw the sprite
-        window.draw(sprite);
-
-        // Draw the string
-        window.draw(text);
-
         // Update the window
         window.display();
     }
