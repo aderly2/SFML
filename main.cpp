@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#include "player.h"
+//#include "player.h"
 #include "enemy.h"
 #include "object.h"
 

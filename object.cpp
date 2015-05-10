@@ -26,6 +26,6 @@ object::object(int objectType, float x, float y) // Default Constructor
 void object::update()
 {
     // Keep sprite at rect
-    spritePlayer.setPosition(rect.getPosition());
-    spritePlayer.setRotation(rect.getRotation());
+    sprite.setPosition(rect.getPosition());
+    sprite.setRotation(rect.getRotation());
 }

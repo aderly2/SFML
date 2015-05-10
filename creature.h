@@ -30,15 +30,10 @@ private:
     int walkingAnimationLengthCounter = 0;
 
 public:
-<<<<<<< HEAD
     creature(); // Default Constructor
     void attack();
     void displayStats();
-=======
-    void creature(); // Default Constructor
-    void attack();
-    void setStats();
->>>>>>> 97ad295115030e78f836a69f2460b1e81f62f47c
+    void setStats(int hp,int str,int vit,int dex);
 };
 
 #endif /* defined(____creature__) */
