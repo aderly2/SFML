@@ -17,14 +17,14 @@ using namespace std;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~ RANDOM FUNCTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 int generateRandom(int max)
 {
-    int randomNumber = rand();
-    float random = (randomNumber % max) + 1;
-    int myRandom = random;
-    return myRandom;
+    return (rand() % max) + 1;
 }
 
 int main(int, char const**)
 {
+    //initialize random seed (else the rand() will always give the same result)
+    srand(time(NULL));
+    
 //    // Variables
 //    int counter = 0;
 //    int counter2 = 0;
@@ -33,7 +33,10 @@ int main(int, char const**)
 //    // Load a sprite to display
 //    sf::Texture texture;
 //    if (!texture.loadFromFile("resources/cute_image.jpg"))
-//        return EXIT_FAILURE;
+//    {
+//        std::cout << failed on load cute_image.jpg on main << std::endl;   
+//        return EXIT_FAILURE;    
+//    }
 //
 //    // Player Object
 //    player player;
@@ -59,14 +62,20 @@ int main(int, char const**)
 //    // Set the Icon
 //    sf::Image icon;
 //    if (!icon.loadFromFile("resources/icon.png"))
+//    {
+//        std::cout << "failed to load icon.png on main" << std::endl;
 //        return EXIT_FAILURE;
+//    }
 //
 //    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 //
 //    // Create a graphical text to display
 //    sf::Font font;
 //    if (!font.loadFromFile("resources/sansation.ttf"))
-//        return EXIT_FAILURE;
+//    {
+//        std::cout << "failed to load sansation.ttf font on main" << std::endl;
+//        return EXIT_FAILURE;        
+//    }
 //
 //    sf::Text text("Hello SFML", font, 50);
 //    text.setColor(sf::Color::Black);
